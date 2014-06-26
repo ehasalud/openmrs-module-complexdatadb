@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.complexdatadb">
+
+	<class name="ComplexDataToDB" table="obs_complex_data" >
+        
+        <id name="uuid" type="java.lang.String"
+            column="uuid" length="36"/>
+        
+        <property name="data" type="binary"
+            column="data" not-null="true"/>
+        
+    </class>
+
+</hibernate-mapping>
