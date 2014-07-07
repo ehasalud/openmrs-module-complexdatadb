@@ -1,0 +1,1 @@
+This module provides an API to store complexs Handler to make use of this API. The module includes two implemented handler: the ImageDBHandler and the BinaryDBHandler. This is useful when using the sync module: the complex data inserted into the database are intercepted by the sync module, so they are automatically sync'd with the parent/children.
