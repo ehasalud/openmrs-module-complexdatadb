@@ -21,6 +21,29 @@
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
 	<!-- Add here beans related to the web context -->
+	
+	
+	<bean parent="obsServiceTarget" >
+	    <property name="handlers">
+	        <map>
+	            <entry>
+	                <key><value>ImageDBHandler</value></key>
+	                <bean class="${project.parent.groupId}.${project.parent.artifactId}.web.handler.WebImageDBHandler"/>
+	            </entry>
+	        </map>
+	    </property>
+	</bean>
+	
+	<bean parent="obsServiceTarget" >
+	    <property name="handlers">
+	        <map>
+	            <entry>
+	                <key><value>BinaryDBHandler</value></key>
+	                <bean class="${project.parent.groupId}.${project.parent.artifactId}.web.handler.WebBinaryDBHandler"/>
+	            </entry>
+	        </map>
+	    </property>
+	</bean>
+	
 
-		
 </beans>

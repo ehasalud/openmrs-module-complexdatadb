@@ -23,14 +23,20 @@ public interface ComplexDataToDBDAO {
 	
 	/**
 	 * Save a ComplexDataToDB object into the database.
-	 * @param obsImage
+	 * @param obsImage ComplexDataToDB to store/update in the database
 	 */
 	public void saveComplexDataToDB(ComplexDataToDB obsImage);
 	
 	/**
 	 * Returns a ComplexDataToDB object from the database based on its uuid.
-	 * @param uuid
+	 * @param uuid Uuid of the ComplexDataToDB object
 	 * @return
 	 */
 	public ComplexDataToDB getComplexDataToDB(String uuid);
+	
+	/**
+	 * Delete a ComplexDataToDB object from the database based on its uuid.
+	 * @param uuid Uuid of the ComplexDataToDB object
+	 */
+	public void deleteComplexDataToDB(String uuid);
 }

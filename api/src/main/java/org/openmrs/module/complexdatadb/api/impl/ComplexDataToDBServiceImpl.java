@@ -58,4 +58,14 @@ public class ComplexDataToDBServiceImpl extends BaseOpenmrsService implements Co
 	public ComplexDataToDB getComplexDataToDB(String uuid) {	
 		return dao.getComplexDataToDB(uuid);
 	}
+
+	
+	/**
+	 * @see ComplexDataToDBService#deleteComplexDataToDB(String)
+	 */
+	@Override
+	public void deleteComplexDataToDB(String uuid) {
+		dao.deleteComplexDataToDB(uuid);
+		
+	}
 }

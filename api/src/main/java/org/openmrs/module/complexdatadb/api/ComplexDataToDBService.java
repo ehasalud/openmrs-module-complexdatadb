@@ -18,7 +18,7 @@ import org.openmrs.module.complexdatadb.ComplexDataToDB;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * This service exposes module's core functionality. It is a Spring managed bean which is configured in moduleApplicationContext.xml.
+ * This service exposes methods for managing complex data with tha database.
  * <p>
  * It can be accessed only via Context:<br>
  * <code>
@@ -30,8 +30,23 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ComplexDataToDBService extends OpenmrsService {
      
+	/**
+	 * Save an object in the database.
+	 * @param obsImage
+	 */
 	public void saveComplexDataToDB(ComplexDataToDB obsImage);
 	
+	/**
+	 * Retrieve an object from the database.
+	 * @param uuid Uuid of the object
+	 * @return
+	 */
 	public ComplexDataToDB getComplexDataToDB(String uuid);
+	
+	/**
+	 * Delete an object from the database.
+	 * @param uuid Uuid of the object
+	 */
+	public void deleteComplexDataToDB(String uuid);
 
 }

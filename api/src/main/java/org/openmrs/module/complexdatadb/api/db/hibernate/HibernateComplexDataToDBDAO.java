@@ -15,10 +15,10 @@ package org.openmrs.module.complexdatadb.api.db.hibernate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.openmrs.module.ModuleActivator;
 import org.openmrs.module.complexdatadb.ComplexDataToDB;
 import org.openmrs.module.complexdatadb.api.db.ComplexDataToDBDAO;
 
@@ -64,5 +64,18 @@ public class HibernateComplexDataToDBDAO implements ComplexDataToDBDAO {
 		ComplexDataToDB data = (ComplexDataToDB) query.setString("uuid", uuid).list().get(0);
 		
 		return data;
+	}
+
+	/**
+	 * @see ComplexDataToDBDAO#deleteComplexDataToDB(String)
+	 */
+	@Override
+	public void deleteComplexDataToDB(String uuid) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		Query q = session.createQuery("delete from obs_complex_data where uuid = :uuid");
+		q.setString("uuid", uuid);
+		q.executeUpdate();
+		
 	}
 }

@@ -15,7 +15,6 @@ package org.openmrs.module.complexdatadb;
 
 import java.io.Serializable;
 import org.openmrs.BaseOpenmrsObject;
-import org.openmrs.BaseOpenmrsMetadata;
 
 /**
  * This class represents a ComplexData object that is stored into the database. 

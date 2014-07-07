@@ -52,12 +52,24 @@
 		</property>
 	</bean>
 	
+	
 	<bean parent="obsServiceTarget" >
 	    <property name="handlers">
 	        <map>
 	            <entry>
 	                <key><value>ImageDBHandler</value></key>
 	                <bean class="${project.parent.groupId}.${project.parent.artifactId}.api.handler.ImageDBHandler"/>
+	            </entry>
+	        </map>
+	    </property>
+	</bean>
+	
+	<bean parent="obsServiceTarget" >
+	    <property name="handlers">
+	        <map>
+	            <entry>
+	                <key><value>BinaryDBHandler</value></key>
+	                <bean class="${project.parent.groupId}.${project.parent.artifactId}.api.handler.BinaryDBHandler"/>
 	            </entry>
 	        </map>
 	    </property>
